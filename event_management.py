@@ -35,6 +35,19 @@ class Attendee:
             self.email=None
     
     def update_email(self,new_email:str)->bool:
+          """
+        This function will take in the new email and check if the email
+        has the correct length, no symbols that are in the list, the email
+        should contain at least a . and only one @, the email is in lowercase,
+        and there should be text after the final . of the email. 
+
+        Args:
+            new_email (str) - New email to be added.
+
+        Returns:
+            True - If it passes the checks
+            False - If it fails the checks
+        """
         for part:str in new_email:
             if part in Attendee.symbols:
                 return False
