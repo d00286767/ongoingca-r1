@@ -53,15 +53,16 @@ class Attendee:
                 return False
         look_1[str]=new_email.count("@")
         look_2:str=new_email.count(".")
-        if len(new_email)>=8 and len(new_email)<=50 and look_1==1 
-        and look_2<=3 and new_email.islower():
-        #Splits the email to check if there is text after the final .
-        section:list[str]=new_email.split(".")
-        #Counts the number of items in the list
-        end=len(section)
-        #IT checks if there is text after the .
-        if section[end].isalnum():
-            return True
+        if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2<=3 and new_email.islower():
+            #Splits the email to check if there is text after the final .
+            section:list[str]=new_email.split(".")
+            #Counts the number of items in the list
+            end=len(section)
+            #IT checks if there is text after the .
+            if section[end].isalnum():
+                return True
+            else:
+                return False
         else:
             return False
 
