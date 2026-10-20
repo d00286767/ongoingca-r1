@@ -60,6 +60,7 @@ class Attendee:
             end=len(section)
             #IT checks if there is text after the .
             if section[end].isalnum():
+                self.email=new_email
                 return True
             else:
                 return False
