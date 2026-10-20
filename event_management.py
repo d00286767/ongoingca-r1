@@ -4,6 +4,15 @@ class Attendee:
 
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
     def __init__(self,name: str, email:str | None=None):
+        """
+        This function will take in the name and email and store the it,
+        it will be given a unique id and there is a valid email check
+        and if it is invalid it will be set as None.
+
+        Args:
+            name (str): Attendee's name.
+            email (str | None): Attendee's email.
+        """
         Attendee.count+=1
 
         self.__attendee_id=Attendee.count
@@ -24,6 +33,5 @@ class Attendee:
             self.email=email
         else:
             self.email=None
-
 class Booking:
     pass
