@@ -14,13 +14,13 @@ class Attendee:
             check_2[str]=email.count(".")
             
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2<=3 and email.islower():
-                valid=True
+                Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
                         print("Invalid email")
-                        valid=False
+                        Attendee.valid=False
         
-        if valid:
+        if Attendee.valid:
             self.email=email
         else:
             self.email=None
