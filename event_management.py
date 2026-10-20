@@ -1,7 +1,11 @@
 class Attendee:
+    counter:int=0
+
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
-    def __init__(self,attendee_id: int,name: str, email:str | None=None):
-        self.__attendee_id=attendee_id
+    def __init__(self,name: str, email:str | None=None):
+        Attendee.count+=1
+
+        self.__attendee_id=Attendee.count
         self.name=name
 
         check_1:[str]=email.count("@")
