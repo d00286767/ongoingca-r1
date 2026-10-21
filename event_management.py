@@ -5,7 +5,7 @@ class Attendee:
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
     def __init__(self,name: str, email:str | None=None):
         """
-        This function will take in the name and email and store the it,
+        This function will take in the name and email and store the values,
         it will be given a unique id and there is a valid email check
         and if it is invalid it will be set as None.
 
@@ -22,7 +22,10 @@ class Attendee:
             check_1:int=email.count("@")
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
-                Attendee.valid=True
+                portion:list[str]=email.split(".")
+                last=len(portion)
+                if portion[last-1].isalnum():
+                    Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
                         print("Invalid email")
