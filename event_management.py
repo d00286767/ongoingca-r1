@@ -19,8 +19,8 @@ class Attendee:
         self.name=name
 
         if email is not None:
-            check_1:[str]=email.count("@")
-            check_2[str]=email.count(".")
+            check_1:int=email.count("@")
+            check_2:int=email.count(".")
             
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2<=3 and email.islower():
                 Attendee.valid=True
