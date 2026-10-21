@@ -86,11 +86,17 @@ class Attendee:
 
         
 class Booking:
-    pass
+    def __init__(self,book_id:int,attendee: Attendee, event: Event, book_date:str, cancelled: bool):
+        self.__book_id=book_id
+        self.attendee=attendee
+        self.__event=event
+        self.__book_date=book_date
+        self.cancelled=cancelled
+
+
+
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
-change=Attendee("Gian")
-updated=change.update_email("gianvgallego@gmail.com")
 print(person)
-if updated:
-    print(updated)
+person.update_email("gianvgallego@gmail.com")
+print(person)
