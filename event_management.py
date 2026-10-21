@@ -13,9 +13,9 @@ class Attendee:
             name (str): Attendee's name.
             email (str | None): Attendee's email.
         """
-        Attendee.count+=1
+        Attendee.counter+=1
 
-        self.__attendee_id=Attendee.count
+        self.__attendee_id=Attendee.counter
         self.name=name
 
         if email is not None:
