@@ -68,7 +68,7 @@ class Attendee:
             return False
     
     def __str__(self) -> str:
-          """
+        """
         This function will return a string that contains information
         of the Attendee.
 
