@@ -58,7 +58,7 @@ class Attendee:
             #Counts the number of items in the list
             end=len(section)
             #IT checks if there is text after the .
-            if section[end].isalnum():
+            if section[end-1].isalnum():
                 self.email=new_email
                 return True
             else:
@@ -89,4 +89,8 @@ class Booking:
     pass
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
+change=Attendee("Gian")
+updated=change.update_email("gianvgallego@gmail.com")
 print(person)
+if updated:
+    print(updated)
