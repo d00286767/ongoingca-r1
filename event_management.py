@@ -10,7 +10,7 @@ class Attendee:
         and if it is invalid it will be set as None.
 
         Args:
-            name (str): Attendee's name.
+           name (str): Attendee's name.
             email (str | None): Attendee's email.
         """
         Attendee.counter+=1
@@ -21,8 +21,7 @@ class Attendee:
         if email is not None:
             check_1:int=email.count("@")
             check_2:int=email.count(".")
-            
-            if len(email)>=8 and len(email)<=50 and check_1==1 and check_2<=3 and email.islower():
+            if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
@@ -53,7 +52,7 @@ class Attendee:
                 return False
         look_1:int=new_email.count("@")
         look_2:int=new_email.count(".")
-        if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2<=3 and new_email.islower():
+        if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2>=1 and new_email.islower():
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
             #Counts the number of items in the list
@@ -89,5 +88,5 @@ class Attendee:
 class Booking:
     pass
 
-person=Attendee("Gian", "D00288733@student.dkit.ie")
+person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
