@@ -66,6 +66,11 @@ class Attendee:
                 return False
         else:
             return False
+    
+    def __str__(self) -> str:
+        return f"Name: {self.name}, Email {self.email}"
+
+
 
 
 
