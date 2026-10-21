@@ -1,3 +1,6 @@
+import datetime
+
+
 class Attendee:
     counter:int=0
     valid:bool=False
@@ -89,12 +92,14 @@ class Attendee:
 
         
 class Booking:
-    def __init__(self,book_id:int,attendee: Attendee, event: Event, book_date:str, cancelled: bool):
+    def __init__(self,book_id:int,attendee: Attendee, event: Event, book_date:datetime, cancelled: bool):
         self.__book_id=book_id
         self.attendee=attendee
         self.__event=event
         self.__book_date=book_date
         self.cancelled=cancelled
+
+        cur=datetime.datetime.today()
 
 
 
