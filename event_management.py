@@ -48,7 +48,7 @@ class Attendee:
             True - If it passes the checks
             False - If it fails the checks
         """
-        for part:str in new_email:
+        for part in new_email:
             if part in Attendee.symbols:
                 return False
         look_1[str]=new_email.count("@")
@@ -88,3 +88,6 @@ class Attendee:
         
 class Booking:
     pass
+
+person=Attendee("Gian", "D00288733@student.dkit.ie")
+print(person)
