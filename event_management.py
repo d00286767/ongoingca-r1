@@ -35,7 +35,7 @@ class Attendee:
             self.email=None
     
     def update_email(self,new_email:str)->bool:
-          """
+        """
         This function will take in the new email and check if the email
         has the correct length, no symbols that are in the list, the email
         should contain at least a . and only one @, the email is in lowercase,
@@ -51,8 +51,8 @@ class Attendee:
         for part in new_email:
             if part in Attendee.symbols:
                 return False
-        look_1[str]=new_email.count("@")
-        look_2:str=new_email.count(".")
+        look_1:int=new_email.count("@")
+        look_2:int=new_email.count(".")
         if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2<=3 and new_email.islower():
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
