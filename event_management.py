@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 
 
 class Attendee:
@@ -100,6 +100,12 @@ class Booking:
         self.__event=event
         self.cancelled=cancelled
 
+        current=date.today()
+
+        if current>book_date:
+            self.book_date=book_date
+        else:
+            self.book_date=None
 
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
