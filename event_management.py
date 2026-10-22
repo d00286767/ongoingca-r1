@@ -93,10 +93,9 @@ class Attendee:
         
 class Booking:
     book_count: int= 0
-    def __init__(self,attendee: Attendee, event: Event, book_date:datetime, cancelled: bool):
+    def __init__(self,attendee: Attendee, event: str, book_date:date, cancelled: bool):
         Booking.book_count+=1
         self.__book_id=Booking.book_count
-        self.attendee=attendee
         self.__event=event
         self.cancelled=cancelled
 
@@ -107,10 +106,12 @@ class Booking:
         else:
             self.book_date=None
 
+        if attendee is not None:
+            self.attendee=attendee
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
 person.update_email("giangallego@gmail.com")
 print(person)
-
-check=Booking("Gian","conference",2025-6-22)
+mydate=date(2026, 5, 26)
+check=Booking(person,"conference",mydate,True)
