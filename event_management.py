@@ -92,19 +92,19 @@ class Attendee:
 
         
 class Booking:
-    def __init__(self,book_id:int,attendee: Attendee, event: Event, book_date:datetime, cancelled: bool):
-        self.__book_id=book_id
+    book_count: int= 0
+    def __init__(self,attendee: Attendee, event: Event, book_date:datetime, cancelled: bool):
+        Booking.book_count+=1
+        self.__book_id=Booking.book_count
         self.attendee=attendee
         self.__event=event
-        self.__book_date=book_date
         self.cancelled=cancelled
-
-        cur=datetime.datetime.today()
-
 
 
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
-person.update_email("gianvgallego@gmail.com")
+person.update_email("giangallego@gmail.com")
 print(person)
+
+check=Booking("Gian","conference",2025-6-22)
