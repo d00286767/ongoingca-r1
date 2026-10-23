@@ -128,7 +128,7 @@ class Booking:
             return True
         return False
 
-    def cancel_booking(self):
+    def cancel_booking(self)->bool:
         """
                  This function will cancel the booking by changing the cancelled
                  field to True.
@@ -136,8 +136,9 @@ class Booking:
                  Returns:
                      True is returned when the cancel field is updated to True.
         """
-        self.cancelled=True
-        return True
+        if not self.cancelled:
+            self.cancelled=True
+        return False
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
