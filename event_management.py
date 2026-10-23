@@ -111,9 +111,11 @@ class Booking:
         if event is not None:
             self.event=event
 
-    def change_attendee(self,person):
+    def change_attendee(self,person)-> bool:
         if person is not None:
             self.attendee=person
+            return True
+        return False
 
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
