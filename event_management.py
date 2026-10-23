@@ -128,10 +128,13 @@ class Booking:
             return True
         return False
 
+    def cancel_booking(self):
+        self.cancelled=True
+        return True
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
 person.update_email("giangallego@gmail.com")
 print(person)
 mydate=date(2026, 5, 26)
-check=Booking(person,"conference",mydate,True)
+check=Booking(person,"conference",mydate,False)
