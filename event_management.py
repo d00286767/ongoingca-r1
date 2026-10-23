@@ -98,7 +98,7 @@ class Booking:
         self.__book_id=Booking.book_count
         self.cancelled=cancelled
 
-        current=date.today()
+        current: date=date.today()
 
         if current>book_date:
             self.book_date=book_date
@@ -111,7 +111,7 @@ class Booking:
         if event is not None:
             self.event=event
 
-    def change_attendee(self,person)-> bool:
+    def change_attendee(self,person: Attendee)-> bool:
         """
            This function will change the attendee on the booking
            and return a bool.
@@ -143,8 +143,16 @@ class Booking:
         return False
 
     def __str__(self)-> str:
+        """
+                     This function will return a string that contain the Booking Information,
+                     the if statement will check if the event is cancelled and store yes or no
+                     in the answer variable.
+
+                     Returns:
+                         It returns a string containing the Booking Information.
+        """
         if self.cancelled:
-            answer="Yes"
+            answer: str="Yes"
         else:
             answer="No"
 
