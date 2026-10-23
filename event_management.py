@@ -112,6 +112,17 @@ class Booking:
             self.event=event
 
     def change_attendee(self,person)-> bool:
+        """
+           This function will change the attendee on the booking
+           and return a bool.
+
+           Args:
+               person = Stores the attendee object.
+           Returns:
+               True or false and if the object is not none, the value
+               stored in the attendee variable will store the person
+               variable.
+        """
         if person is not None:
             self.attendee=person
             return True
