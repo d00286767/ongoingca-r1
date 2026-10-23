@@ -94,6 +94,19 @@ class Attendee:
 class Booking:
     book_count: int= 0
     def __init__(self,attendee: Attendee, event: str, book_date:date, cancelled: bool):
+        """
+                This function will take in the attendee, event,
+                booking date and cancelled.It will do checks on the booking date to check if the
+                dates are not in the future and the event and attendee to ensure it is None.The
+                values are stored in the Booking  objectvariables.The Booking id gives each object
+                a unique id.
+
+                Args:
+                    attendee = Stores the Attendee Object
+                    event = Stores the Event Object
+                    book_date = Stores the booking date
+                    cancelled = Stores a boolean.
+        """
         Booking.book_count+=1
         self.__book_id=Booking.book_count
         self.cancelled=cancelled
