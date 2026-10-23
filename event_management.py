@@ -142,9 +142,26 @@ class Booking:
             self.cancelled=True
         return False
 
+    def __str__(self)-> str:
+        if self.cancelled:
+            answer="Yes"
+        else:
+            answer="No"
+
+        return ("Details below:\n"
+                f"{self.attendee}:\n"
+                f"Date: {self.book_date}\n"
+                f"Event: {self.event}\n"
+                f"Cancelled: {answer}\n"
+                " ")
+
+
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
 person.update_email("giangallego@gmail.com")
 print(person)
 mydate=date(2026, 5, 26)
 check=Booking(person,"conference",mydate,False)
+print(check)
+check.cancel_booking()
+print(check)
