@@ -134,7 +134,9 @@ class Booking:
                  field to True.
 
                  Returns:
-                     True is returned when the cancel field is updated to True.
+                     If the cancelled field is not set to True, it will set it to True
+                     and return True.If it is set to True, it returns False because there
+                     is no change created.
         """
         if not self.cancelled:
             self.cancelled=True
