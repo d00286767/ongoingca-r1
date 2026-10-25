@@ -176,6 +176,23 @@ class Booking:
                 f"Cancelled: {answer}\n"
                 " ")
 
+class Event:
+    pass    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
