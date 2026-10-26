@@ -181,7 +181,20 @@ class Event:
 
 class Venue:
     def __init__(self,Venue_id:int,name:str,Capacity:int):
-        if Capacity > 0:
+        """
+        This function will take in the Venue_id, name and Capacity and store the values.
+        
+        
+        Args:
+            Venue_id (int): Venue's unique id.
+            name (str): Venue's name.
+            Capacity (int): Venue's capacity.
+        
+        returns:
+            False - If the capacity is less than or equal to 0.
+            None - If the capacity is greater than 0, it will store the values in the object variables.
+        """
+        if Capacity <= 0:
             return False
         else:
             self._Capacity = Capacity
