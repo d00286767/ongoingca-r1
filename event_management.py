@@ -189,18 +189,23 @@ class Venue:
             Venue_id (int): Venue's unique id.
             name (str): Venue's name.
             Capacity (int): Venue's capacity.
+            valid (bool): Store's the boolean value
         
         returns:
             False - If the capacity is less than or equal to 0.
-            None - If the capacity is greater than 0, it will store the values in the object variables.
+            True - If the capacity is greater than 0, it will store all the values  in the object variables.
         """
-        if Capacity <= 0:
-            return False
-        else:
-            self._Capacity = Capacity
-
+        
         self._Venue_id = Venue_id
         self.name = name
+        self._Capacity = Capacity
+        
+
+        if Capacity <= 0:
+            self.valid = False
+        else:
+            self.valid = True
+            
 
     def venue_id(self) -> int:
         """
@@ -226,10 +231,15 @@ class Venue:
         Returns:
             A string containing the Venue Information.
         """
-        return f"Venue\n VenueID:{self._Venue_id},\nName:{self.name},\nCapacity:{self._Capacity}"
+        return (f"Venue Information\n"
+                f"VenueID: {self._Venue_id}\n"
+                f"Name: {self.name}\n"
+                f"Capacity: {self._Capacity}")
     
     
-        
+venue1 = Venue(1, "Main Hall", 0)
+print(venue1)  
+print(venue1.valid)   
 
 
     
