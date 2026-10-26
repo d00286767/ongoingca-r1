@@ -177,7 +177,10 @@ class Booking:
                 " ")
 
 class Event:
-    pass    
+    pass 
+
+class Venue:
+    pass
 
 
 
