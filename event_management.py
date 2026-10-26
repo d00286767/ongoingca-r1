@@ -180,7 +180,7 @@ class Event:
     pass
 
 class Venue:
-    def __init__(self,Venue_id,name,Capacity):
+    def __init__(self,Venue_id:int,name:str,Capacity:int):
         if Capacity > 0:
             return False
         else:
@@ -189,12 +189,12 @@ class Venue:
         self._Venue_id = Venue_id
         self.name = name
 
-    def venue_id(self):
+    def venue_id(self) -> int:
         return self._Venue_id
 
-    def capacity(self):
+    def capacity(self) -> int:
         return self._Capacity
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Venue\n VenueID:{self._Venue_id},\nName:{self.name},\nCapacity:{self._Capacity}"
     
     
