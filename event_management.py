@@ -189,6 +189,13 @@ class Venue:
         self._Venue_id = Venue_id
         self.name = name
 
+    def venue_id(self):
+        return self._Venue_id
+
+    def capacity(self):
+        return self._Capacity
+
+
     
 
         
