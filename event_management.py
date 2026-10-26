@@ -220,6 +220,12 @@ class Venue:
         """
         return self._Capacity
     def __str__(self) -> str:
+        """
+        This function will return a string containing the Venue Information.
+        
+        Returns:
+            A string containing the Venue Information.
+        """
         return f"Venue\n VenueID:{self._Venue_id},\nName:{self.name},\nCapacity:{self._Capacity}"
     
     
