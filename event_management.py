@@ -203,9 +203,21 @@ class Venue:
         self.name = name
 
     def venue_id(self) -> int:
+        """
+        This function will return the Venue_id of the Venue object.
+        
+        Returns:
+            Venue_id (int): Venue's unique id.
+        """
         return self._Venue_id
 
     def capacity(self) -> int:
+        """
+        This function will return the capacity of the Venue object.
+        
+        Returns:
+            Capacity (int): Venue's capacity.
+        """
         return self._Capacity
     def __str__(self) -> str:
         return f"Venue\n VenueID:{self._Venue_id},\nName:{self.name},\nCapacity:{self._Capacity}"
