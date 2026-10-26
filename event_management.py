@@ -177,10 +177,21 @@ class Booking:
                 " ")
 
 class Event:
-    pass 
+    pass
 
 class Venue:
-    pass
+    def __init__(self,Venue_id,name,Capacity):
+        if Capacity > 0:
+            return False
+        else:
+            self._Capacity = Capacity
+
+        self._Venue_id = Venue_id
+        self.name = name
+
+    
+
+        
 
 
 
