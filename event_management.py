@@ -194,6 +194,11 @@ class Venue:
 
     def capacity(self):
         return self._Capacity
+    def __str__(self):
+        return f"Venue\n VenueID:{self._Venue_id},\nName:{self.name},\nCapacity:{self._Capacity}"
+    
+    
+        
 
 
     
