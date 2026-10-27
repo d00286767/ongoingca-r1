@@ -1,4 +1,4 @@
-from datetime import date,time
+from datetime import date as Date, time
 
 
 class Attendee:
@@ -93,7 +93,7 @@ class Attendee:
         
 class Booking:
     book_count: int= 0
-    def __init__(self,attendee: Attendee, event: str, book_date:date, cancelled: bool):
+    def __init__(self,attendee: Attendee, event: str, book_date:Date, cancelled: bool):
         """
                 This function will take in the attendee, event,
                 booking date and cancelled.It will do checks on the booking date to check if the
@@ -111,7 +111,7 @@ class Booking:
         self.__book_id=Booking.book_count
         self.cancelled=cancelled
 
-        current: date=date.today()
+        current: Date=Date.today()
 
         if current>book_date:
             self.book_date=book_date
@@ -185,8 +185,8 @@ class Event:
         self.cancelled = cancelled
         self.ticketprice = ticketprice
 
-        current = date.today()
-        if current > date:
+        current = Date.today()
+        if date >= current:
             self.date = date
         else:
             self.date = None
@@ -197,21 +197,22 @@ class Event:
         else:
             self.event_type = None
 
-        if capacity >= 0 and Venue._Capacity > capacity:
+        venue_capacity = venue.capacity()
+        if venue.valid and venue_capacity is not None and 0 < capacity <= venue_capacity:
             self._capacity = capacity
         else:
             self._capacity = None
 
     def update_scheduling_detials(self,new_date,new_time):
-        current = date.today()
-        if current > new_date:
+        current = Date.today()
+        if new_date >= current:
             self.date = new_date
-        else:
-            self.date = None
-        self.start_time = new_time
+            self.start_time = new_time
 
     def change_venue(self,new_venue:Venue):
-        if new_venue._Capacity >= self._capacity:
+        new_capacity = new_venue.capacity()
+        if (new_venue.valid and new_capacity is not None and
+                self._capacity is not None and new_capacity >= self._capacity):
             self.venue = new_venue
             return True
         else:
@@ -224,20 +225,18 @@ class Event:
         else:
             return False
     def cancel_event(self):
-        current = date.today()
-        if current == self.date:
+        current = Date.today()
+        if self.date is None or current >= self.date or self.cancelled:
             return False
-        else:
-            if not self.cancelled:
-                self.cancelled=True
-            return True
+        self.cancelled=True
+        return True
     def __str__(self):
         if self.cancelled:
             answer="Yes"
         else:
             answer="No"
         return ("Event Information\n"
-                f"Event_id: {self.Event_id}\n"
+                f"Event_id: {self._Event_id}\n"
                 f"Title: {self.title}\n"
                 f"Date: {self.date}\n"
                 f"Start Time: {self.start_time}\n"
@@ -246,6 +245,8 @@ class Event:
                 f"Capacity: {self._capacity}\n"
                 f"Cancelled: {answer}\n"
                 f"Ticket Price: {self.ticketprice}\n")
+
+    
 
             
 
@@ -316,10 +317,9 @@ class Venue:
     
 venue1 = Venue(1, "Main Hall", 0)
 print(venue1)  
-print(venue1.valid)   
-
-
-    
+event1 = Event(1, "Tech Conference", "conference", Date.today(), time(9, 0), 100,
+               Venue(2, "Conference Hall", 500), False, 50.0)
+print(event1)
 
         
 
@@ -342,7 +342,7 @@ person=Attendee("Gian", "d00288733@student.dkit.ie")
 print(person)
 person.update_email("giangallego@gmail.com")
 print(person)
-mydate=date(2026, 5, 26)
+mydate=Date(2026, 5, 26)
 check=Booking(person,"conference",mydate,False)
 print(check)
 check.cancel_booking()
