@@ -28,7 +28,7 @@ class Attendee:
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
                 last:int=len(portion)
-                if portion[last-1].isalnum():
+                if portion[last-1].isalpha():
                     Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
@@ -65,7 +65,7 @@ class Attendee:
             #Counts the number of items in the list
             end: int=len(section)
             #IT checks if there is text after the .
-            if section[end-1].isalnum():
+            if section[end-1].isalpha():
                 self.email=new_email
                 return True
             else:
