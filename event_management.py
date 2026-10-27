@@ -98,7 +98,7 @@ class Attendee:
         
 class Booking:
     book_count: int= 0
-    def __init__(self,attendee: Attendee, event: str, book_date:Date, cancelled: bool):
+    def __init__(self,attendee: Attendee | None, event: str, book_date:Date, cancelled: bool):
         """
                 This function will take in the attendee, event,
                 booking date and cancelled.It will do checks on the booking date to check if the
@@ -125,6 +125,8 @@ class Booking:
 
         if attendee is not None:
             self.attendee=attendee
+        else:
+            self.attendee=None
 
         if event is not None:
             self.event=event
