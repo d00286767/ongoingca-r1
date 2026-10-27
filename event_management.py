@@ -223,6 +223,17 @@ class Event:
             return True
         else:
             return False
+    def cancel_event(self):
+        current = date.today()
+        if current == self.date:
+            return False
+        else:
+            if not self.cancelled:
+                self.cancelled=True
+            return True
+
+            
+
             
 
 
