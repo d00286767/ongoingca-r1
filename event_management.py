@@ -1,4 +1,5 @@
 from datetime import date as Date, time
+from sqlite3 import Time
 
 
 class Attendee:
@@ -177,7 +178,7 @@ class Booking:
                 " ")
 
 class Event:
-    def __init__(self,Event_id,title,event_type,date,start_time,capacity,venue,cancelled,ticketprice):
+    def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
         self._Event_id = Event_id
         self.title = title
         self.start_time = start_time
@@ -203,13 +204,13 @@ class Event:
         else:
             self._capacity = None
 
-    def update_scheduling_detials(self,new_date,new_time):
+    def update_scheduling_detials(self,new_date:Date,new_time:Time):
         current = Date.today()
         if new_date >= current:
             self.date = new_date
             self.start_time = new_time
 
-    def change_venue(self,new_venue:Venue):
+    def change_venue(self,new_venue:Venue) -> bool:
         new_capacity = new_venue.capacity()
         if (new_venue.valid and new_capacity is not None and
                 self._capacity is not None and new_capacity >= self._capacity):
@@ -217,20 +218,20 @@ class Event:
             return True
         else:
             return False
-    def change_type(self,new_event_type):
+    def change_type(self,new_event_type:str) -> bool:
         lis_events = ["workshop","open day","conference","convention"]
         if new_event_type in lis_events:
             self.event_type = new_event_type
             return True
         else:
             return False
-    def cancel_event(self):
+    def cancel_event(self) -> bool:
         current = Date.today()
         if self.date is None or current >= self.date or self.cancelled:
             return False
         self.cancelled=True
         return True
-    def __str__(self):
+    def __str__(self) -> str:
         if self.cancelled:
             answer="Yes"
         else:
