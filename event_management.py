@@ -194,13 +194,22 @@ class Event:
         lis_events = ["workshop","open day","conference","convention"]
         if event_type in lis_events:
             self.event_type = event_type
-            self.valid = True
         else:
-            self.valid = False
+            self.event_type = None
 
         if capacity >= 0 and Venue._Capacity > capacity:
-            self.valid = True
             self._capacity = capacity
+        else:
+            self._capacity = None
+
+    def update_scheduling_detials(self,new_date,new_time):
+        current = date.today()
+        if current > new_date:
+            self.date = new_date
+        else:
+            self.date = None
+        self.start_time = new_time
+
 
 
 class Venue:
