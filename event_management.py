@@ -27,8 +27,9 @@ class Attendee:
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
+                part:list[str]=email.split("@")
                 last:int=len(portion)
-                if portion[last-1].isalpha():
+                if portion[last-1].isalpha() and len(part[1])>0:
                     Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
@@ -54,6 +55,7 @@ class Attendee:
             True - If it passes the checks
             False - If it fails the checks
         """
+        #Checks if there are any invalid symbols in the list.
         for part in new_email:
             if part in Attendee.symbols:
                 return False
