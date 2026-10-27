@@ -231,8 +231,21 @@ class Event:
             if not self.cancelled:
                 self.cancelled=True
             return True
-
-            
+    def __str__(self):
+        if self.cancelled:
+            answer="Yes"
+        else:
+            answer="No"
+        return ("Event Information\n"
+                f"Event_id: {self.Event_id}\n"
+                f"Title: {self.title}\n"
+                f"Date: {self.date}\n"
+                f"Start Time: {self.start_time}\n"
+                f"Venue: {self.venue}\n"
+                f"Event Type: {self.event_type}\n"
+                f"Capacity: {self._capacity}\n"
+                f"Cancelled: {answer}\n"
+                f"Ticket Price: {self.ticketprice}\n")
 
             
 
