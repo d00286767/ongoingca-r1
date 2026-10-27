@@ -214,7 +214,17 @@ class Event:
         if new_venue._Capacity >= self._capacity:
             self.venue = new_venue
             return True
-        return False
+        else:
+            return False
+    def change_type(self,new_event_type):
+        lis_events = ["workshop","open day","conference","convention"]
+        if new_event_type in lis_events:
+            self.event_type = new_event_type
+            return True
+        else:
+            return False
+            
+
 
 
 
