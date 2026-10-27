@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date,time
 
 
 class Attendee:
@@ -177,7 +177,31 @@ class Booking:
                 " ")
 
 class Event:
-    pass
+    def __init__(self,Event_id,title,event_type,date,start_time,capacity,venue,cancelled,ticketprice):
+        self._Event_id = Event_id
+        self.title = title
+        self.start_time = start_time
+        self.venue = venue
+        self.cancelled = cancelled
+        self.ticketprice = ticketprice
+
+        current = date.today()
+        if current > date:
+            self.date = date
+        else:
+            self.date = None
+
+        lis_events = ["workshop","open day","conference","convention"]
+        if event_type in lis_events:
+            self.event_type = event_type
+            self.valid = True
+        else:
+            self.valid = False
+
+        if capacity >= 0 and Venue._Capacity > capacity:
+            self.valid = True
+            self._capacity = capacity
+
 
 class Venue:
     def __init__(self,Venue_id:int,name:str,Capacity:int):
@@ -198,13 +222,15 @@ class Venue:
         
         self._Venue_id = Venue_id
         self.name = name
-        self._Capacity = Capacity
+        
         
 
         if Capacity <= 0:
             self.valid = False
+            self._Capacity = None
         else:
             self.valid = True
+            self._Capacity = Capacity
             
 
     def venue_id(self) -> int:
@@ -231,7 +257,7 @@ class Venue:
         Returns:
             A string containing the Venue Information.
         """
-        return (f"Venue Information\n"
+        return ("Venue Information\n"
                 f"VenueID: {self._Venue_id}\n"
                 f"Name: {self.name}\n"
                 f"Capacity: {self._Capacity}")
