@@ -27,7 +27,7 @@ class Attendee:
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
-                last=len(portion)
+                last:int=len(portion)
                 if portion[last-1].isalnum():
                     Attendee.valid=True
                 for x in email:
@@ -63,7 +63,7 @@ class Attendee:
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
             #Counts the number of items in the list
-            end=len(section)
+            end: int=len(section)
             #IT checks if there is text after the .
             if section[end-1].isalnum():
                 self.email=new_email
@@ -125,17 +125,17 @@ class Booking:
         if event is not None:
             self.event=event
 
-    def change_attendee(self,person: Attendee)-> bool:
+    def change_attendee(self,person: Attendee | None)-> bool:
         """
-           This function will change the attendee on the booking
-           and return a bool.
+                This function will change the attendee on the booking
+               and return a bool.
 
-           Args:
-               person = Stores the attendee object.
-           Returns:
-               True or false and if the object is not none, the value
-               stored in the attendee variable will store the person
-               variable.
+               Args:
+                   person = Stores the attendee object.
+               Returns:
+                   True or false and if the object is not none, the value
+                   stored in the attendee variable will store the person
+                   variable.
         """
         if person is not None:
             self.attendee=person
