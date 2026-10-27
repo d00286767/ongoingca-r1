@@ -210,6 +210,14 @@ class Event:
             self.date = None
         self.start_time = new_time
 
+    def change_venue(self,new_venue:Venue):
+        if new_venue._Capacity >= self._capacity:
+            self.venue = new_venue
+            return True
+        return False
+
+
+
 
 
 class Venue:
