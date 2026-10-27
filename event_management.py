@@ -179,6 +179,26 @@ class Booking:
 
 class Event:
     def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
+        """
+        This function will take in the Event_id, title, event_type, date, start_time, capacity, venue, cancelled and ticketprice and store the values.
+        It will check if the date is in the future and if the event_type is valid and if the capacity is less than or equal to the venue capacity. If any of these checks fail, the corresponding attribute will be set to None.
+        
+        
+        Args:
+            Event_id (int): Event's unique id.
+            title (str): Event's title.
+            event_type (str): Type of the event.
+            date (Date): Event's date.
+            start_time (Time): Event's start time.
+            capacity (int): Maximum number of attendees.
+            venue (Venue): Event's venue.
+            cancelled (bool): Whether the event is cancelled.
+            ticketprice (float): Price of each ticket.
+        
+        
+        Returns:
+            None
+            """
         self._Event_id = Event_id
         self.title = title
         self.start_time = start_time
@@ -205,12 +225,32 @@ class Event:
             self._capacity = None
 
     def update_scheduling_detials(self,new_date:Date,new_time:Time):
+        """
+        This function will take in the new date and new time and check if the new date is in the future. If it is, it will update the date and start time of the event. 
+        
+        Args:
+            new_date (Date): New date for the event.
+            new_time (Time): New start time for the event.
+
+        Returns:
+            None
+        """
         current = Date.today()
         if new_date >= current:
             self.date = new_date
             self.start_time = new_time
 
     def change_venue(self,new_venue:Venue) -> bool:
+        """
+        This function will take in the new venue and check if the new venue is valid and if the new venue's capacity is greater than or equal to the current event's capacity. 
+        If both conditions are met, it will update the venue of the event and return True. Otherwise, it will return False.
+        
+        args:
+            new_venue (Venue): New venue for the event.
+        Returns:
+            True - If the new venue is valid and has enough capacity.
+            False - If the new venue is invalid or does not have enough capacity.
+        """
         new_capacity = new_venue.capacity()
         if (new_venue.valid and new_capacity is not None and
                 self._capacity is not None and new_capacity >= self._capacity):
@@ -219,6 +259,16 @@ class Event:
         else:
             return False
     def change_type(self,new_event_type:str) -> bool:
+        """
+        This function will take in the new event type and check if the new event type is valid. 
+        If it is, it will update the event type of the event and return True. Otherwise, it will return False.
+
+        args:
+            new_event_type (str): New event type for the event.
+        Returns:
+            True - If the new event type is valid.
+            False - If the new event type is not valid.
+        """
         lis_events = ["workshop","open day","conference","convention"]
         if new_event_type in lis_events:
             self.event_type = new_event_type
@@ -226,12 +276,27 @@ class Event:
         else:
             return False
     def cancel_event(self) -> bool:
+        """
+        This function will check if the event can be cancelled.
+        If the event date is in the past or the event is already cancelled, it will return False.
+        If the event can be cancelled, it will set the cancelled attribute to True and return True.
+
+        Returns:
+            True - If the event is successfully cancelled.
+            False - If the event cannot be cancelled.
+        """
         current = Date.today()
         if self.date is None or current >= self.date or self.cancelled:
             return False
         self.cancelled=True
         return True
     def __str__(self) -> str:
+        """
+        This function will return a string containing the Event Information and check if it is cancelled.
+
+        returns:
+            A string containing the Event Information.
+        """
         if self.cancelled:
             answer="Yes"
         else:
