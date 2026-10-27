@@ -202,7 +202,7 @@ class Event:
         self._Event_id = Event_id
         self.title = title
         self.start_time = start_time
-        self.venue = venue
+        self.venue = venue.name
         self.cancelled = cancelled
         self.ticketprice = ticketprice
 
@@ -254,7 +254,7 @@ class Event:
         new_capacity = new_venue.capacity()
         if (new_venue.valid and new_capacity is not None and
                 self._capacity is not None and new_capacity >= self._capacity):
-            self.venue = new_venue
+            self.venue = new_venue.name
             return True
         else:
             return False
@@ -381,11 +381,18 @@ class Venue:
                 f"Capacity: {self._Capacity}")
     
     
-venue1 = Venue(1, "Main Hall", 0)
-print(venue1)  
-event1 = Event(1, "Tech Conference", "conference", Date.today(), time(9, 0), 100,
-               Venue(2, "Conference Hall", 500), False, 50.0)
-print(event1)
+venue=Venue(1,"DkIT",100)
+event=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue,False,50.0)
+
+event.update_scheduling_detials(Date(2027,5,27),time(11,0))
+print(event)
+print("*"*50)
+event.change_venue(Venue(2,"DkIT",200))
+print(event)
+print("*"*50)
+event.change_type("workshop")
+print(event)
+
 
         
 
