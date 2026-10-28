@@ -47,6 +47,15 @@ class Event:
         else:
             self._capacity = None
 
+    def get_event_id(self) -> int:
+        """
+        This function will return the Event_id of the Event object.
+        
+        Returns:
+            Event_id (int): Event's unique id.
+        """
+        return self._Event_id
+
     def update_scheduling_detials(self,new_date:Date,new_time:Time):
         """
         This function will take in the new date and new time and check if the new date is in the future. If it is, it will update the date and start time of the event. 
