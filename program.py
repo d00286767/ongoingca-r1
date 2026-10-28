@@ -6,7 +6,7 @@ person_2=Attendee("Michael","michaelsmith@yahoo.ie")
 person_3=Attendee("Susan","suswal@outlook.com")
 
 # 3 Venue
-venue_1=Venue(1, "Dundalk", 100)
+venue_1=Venue(1, "Dkit", 100)
 venue_2=Venue(2, "Croke Park", 50000)
 venue_3=Venue(3, "Aviva Stadium", 50000)
 
@@ -28,25 +28,29 @@ check_email_2 = person_2.update_email("d00288733@")
 if not check_email_2:
     print("Invalid Email")
 print(person_2)
+print("*"*50)
 
-# #displaying the events
-# print(event_1)
-# print("*"*50)
-# print(event_2)
-# print("*"*50)
-# print(event_3)
-# print("*"*50)
-# print(event_4)
-# print("*"*50)
-# print(event_5)
 
-dic = {}
+#displaying the events
+print(event_1)
+print("*"*50)
+print(event_2)
+print("*"*50)
+print(event_3)
+print("*"*50)
+print(event_4)
+print("*"*50)
+print(event_5)
 
-#events
-dic[event_1.get_event_id()] = event_1
-dic[event_2.get_event_id()] = event_2   
-dic[event_3.get_event_id()] = event_3
-dic[event_4.get_event_id()] = event_4
-dic[event_5.get_event_id()] = event_5
+#cancel a event
+event_3.cancel_event()
 
-print(dic)
+#display all the active events
+print("*"*50)
+print("Active Events:")
+for event in [event_1, event_2, event_3, event_4, event_5]:
+    if event.cancelled == False:
+        print(event)
+        print("*"*50)
+
+    

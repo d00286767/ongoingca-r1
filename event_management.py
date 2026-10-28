@@ -390,17 +390,17 @@ class Booking:
 
     
     
-venue=Venue(1,"DkIT",100)
-event=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue,False,50.0)
+# venue=Venue(1,"DkIT",100)
+# event=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue,False,50.0)
 
-event.update_scheduling_detials(Date(2026,5,27),time(11,0))
-print(event)
-print("*"*50)
-event.change_venue(Venue(2,"DkIT",200))
-print(event)
-print("*"*50)
-event.change_type("workshop")
-print(event)
+# event.update_scheduling_detials(Date(2026,5,27),time(11,0))
+# print(event)
+# print("*"*50)
+# event.change_venue(Venue(2,"DkIT",200))
+# print(event)
+# print("*"*50)
+# event.change_type("workshop")
+# print(event)
 
 
         
@@ -420,12 +420,12 @@ print(event)
 
 
 
-person=Attendee("Gian", "d00288733@student.dkit.ie")
-print(person)
-person.update_email("giangallego@gmail.com")
-print(person)
-mydate=Date(2026, 5, 26)
-check=Booking(person,"conference",mydate,False)
-print(check)
-check.cancel_booking()
-print(check)
+# person=Attendee("Gian", "d00288733@student.dkit.ie")
+# print(person)
+# person.update_email("giangallego@gmail.com")
+# print(person)
+# mydate=Date(2026, 5, 26)
+# check=Booking(person,"conference",mydate,False)
+# print(check)
+# check.cancel_booking()
+# print(check)
