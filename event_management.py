@@ -1,6 +1,5 @@
 from datetime import date as Date, time
 from sqlite3 import Time
-
 class Event:
     def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
         """
@@ -204,7 +203,6 @@ class Venue:
                 f"Name: {self.name}\n"
                 f"Capacity: {self._Capacity}")
 
-
 class Attendee:
     counter:int=0
     valid:bool=False
@@ -386,7 +384,7 @@ class Booking:
 venue=Venue(1,"DkIT",100)
 event=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue,False,50.0)
 
-event.update_scheduling_detials(Date(2027,5,27),time(11,0))
+event.update_scheduling_detials(Date(2026,5,27),time(11,0))
 print(event)
 print("*"*50)
 event.change_venue(Venue(2,"DkIT",200))
