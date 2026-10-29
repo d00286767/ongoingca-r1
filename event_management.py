@@ -1,3 +1,4 @@
+
 from datetime import date as Date, time
 class Event:
     def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
