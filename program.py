@@ -24,6 +24,13 @@ booking_3=Booking(person_3,event_3,Date(2026,8,16),False)
 booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
 booking_5=Booking(person_2,event_5,Date(2026,2,21),False)
 
+#Display Venues
+
+print("Venues:")
+for place in [venue_1,venue_2,venue_3]:
+    print(f"{place.name}")
+print(" ")
+
 #Display bookings
 print("Current Bookings")
 print("-"*50)
