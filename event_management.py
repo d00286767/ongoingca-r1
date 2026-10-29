@@ -294,7 +294,8 @@ class Attendee:
         Returns:
             A string that contains the Attendee's name and Attendee's email.
         """
-        return f"Name: {self.name}, Email {self.email}"
+        return (f"Name: {self.name}\n "
+                f"Email: {self.email}")
 
 
 
