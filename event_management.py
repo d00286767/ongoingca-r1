@@ -309,7 +309,7 @@ class Booking:
                 This function will take in the attendee, event,
                 booking date and cancelled.It will do checks on the booking date to check if the
                 dates are not in the future and the event and attendee to ensure it is None.The
-                values are stored in the Booking  objectvariables.The Booking id gives each object
+                values are stored in the Booking object variables.The Booking id gives each object
                 a unique id.
 
                 Args:
@@ -388,8 +388,12 @@ class Booking:
             answer="No"
 
         return ("Details below:\n"
+                "Attendee details:\n"
+                " "
                 f"{self.attendee}\n"
-                f"Date: {self.book_date}\n"
+                " "
+                f"Booking Date: {self.book_date}\n"
+                "Event Details:\n"
                 f"Event: {self.event}\n"
                 f"Change to Cancelled: {answer}\n"
                 " ")
