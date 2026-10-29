@@ -237,9 +237,10 @@ class Attendee:
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
+                section:list[str]=email.split("@")
 
-                last=len(portion)
-                if portion[last-1].isalnum():
+                last:int=len(portion)
+                if portion[last-1].isalnum() and len(section[1])>0:
                     Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
