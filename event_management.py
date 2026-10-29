@@ -1,8 +1,6 @@
 
 from datetime import date as Date, time
 
-<<<<<<< HEAD
-=======
 class Venue:
     def __init__(self,Venue_id:int,name:str,Capacity:int):
         """
@@ -63,7 +61,6 @@ class Venue:
                 f"Capacity: {self._Capacity}")
 
 
->>>>>>> 3e44c8d5da4368d79c04e708767f294495b787ab
 class Event:
     def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
         """
