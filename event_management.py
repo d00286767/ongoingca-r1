@@ -388,10 +388,10 @@ class Booking:
             answer="No"
 
         return ("Details below:\n"
-                f"{self.attendee}:\n"
+                f"{self.attendee}\n"
                 f"Date: {self.book_date}\n"
                 f"Event: {self.event}\n"
-                f"Cancelled: {answer}\n"
+                f"Change to Cancelled: {answer}\n"
                 " ")
 
 

@@ -18,7 +18,7 @@ event_4=Event(4,"Seminar","workshop",Date(2027,9,15),time(10,0),500,venue_3,True
 event_5=Event(5,"Hackathon","conference",Date(2027,10,1),time(9,0),1000,venue_2,False,200.0)
 
 # 5 Bookings
-booking_1=Booking(person_1,event_1,Date(2026,5,4),False)
+booking_1=Booking(None,event_1,Date(2026,5,4),False)
 booking_2=Booking(person_2,event_2,Date(2026,7,25),True)
 booking_3=Booking(person_3,event_3,Date(2026,8,16),False)
 booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
@@ -44,14 +44,14 @@ print("Changing the emails")
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
 if not check_email:
-    print("Invalid Email")
+    print("Invalid Email, there is no @")
 print(person_1)
 
 print("-"*50)
 #Checking domain name
 check_email_2 = person_2.update_email("d00288733@")
 if not check_email_2:
-    print("Invalid Email")
+    print("Invalid Email, no domain name")
 print(person_2)
 print("*"*50)
 
