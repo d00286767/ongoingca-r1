@@ -72,4 +72,7 @@ for event in [event_1, event_2, event_3, event_4, event_5]:
         print(event)
         print("*"*50)
 
-    
+#Display bookings of specific attendee
+for specific in [booking_1,booking_2,booking_3,booking_4,booking_5]:
+    if specific.attendee.name==person_1.name:
+        print(specific)
