@@ -12,10 +12,10 @@ venue_3=Venue(3, "Aviva Stadium", 50000)
 
 # 5 events
 event_1=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue_1,False,50.0)
-event_2=Event(2,"Concert","concert",Date(2027,8,26),time(20,0),50000,venue_2,True,100.0)
+event_2=Event(2,"Concert","convention",Date(2027,8,26),time(20,0),50000,venue_2,True,100.0)
 event_3=Event(3,"Workshop","workshop",Date(2027,9,1),time(14,0),200,venue_1,False,75.0)
-event_4=Event(4,"Seminar","seminar",Date(2027,9,15),time(10,0),500,venue_3,True,150.0)
-event_5=Event(5,"Hackathon","hackathon",Date(2027,10,1),time(9,0),1000,venue_2,False,200.0)
+event_4=Event(4,"Seminar","workshop",Date(2027,9,15),time(10,0),500,venue_3,True,150.0)
+event_5=Event(5,"Hackathon","conference",Date(2027,10,1),time(9,0),1000,venue_2,False,200.0)
 
 # 5 Bookings
 booking_1=Booking(person_1,event_1,Date(2026,5,4),False)
