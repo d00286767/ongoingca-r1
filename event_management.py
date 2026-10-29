@@ -217,7 +217,7 @@ class Attendee:
     valid:bool=False
 
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
-    def __init__(self,name: str, email:str | None=None):
+    def __init__(self,name: str, email:str | None=None) ->None:
         """
         This function will take in the name and email and store the values,
         it will be given a unique id and there is a valid email check
@@ -237,6 +237,7 @@ class Attendee:
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
+
                 last=len(portion)
                 if portion[last-1].isalnum():
                     Attendee.valid=True
@@ -304,7 +305,7 @@ class Attendee:
         
 class Booking:
     book_count: int= 0
-    def __init__(self,attendee: Attendee, event: str, book_date:Date, cancelled: bool):
+    def __init__(self,attendee: Attendee, event: Event, book_date:Date, cancelled: bool) -> None:
         """
                 This function will take in the attendee, event,
                 booking date and cancelled.It will do checks on the booking date to check if the
@@ -335,7 +336,7 @@ class Booking:
         if event is not None:
             self.event=event
 
-    def change_attendee(self,person: Attendee)-> bool:
+    def change_attendee(self,person: Attendee | None=None)-> bool:
         """
            This function will change the attendee on the booking
            and return a bool.
