@@ -273,10 +273,11 @@ class Attendee:
         if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2>=1 and new_email.islower():
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
+            after:list[str]=new_email.split("@")
             #Counts the number of items in the list
-            end=len(section)
-            #IT checks if there is text after the .
-            if section[end-1].isalnum():
+            end:int =len(section)
+            #IT checks if there is text after the last . and after the @ there is text
+            if section[end-1].isalnum() and len(after)>0:
                 self.email=new_email
                 return True
             else:
