@@ -51,15 +51,9 @@ print("*"*50)
 
 
 #displaying the events
-print(event_1)
-print("*"*50)
-print(event_2)
-print("*"*50)
-print(event_3)
-print("*"*50)
-print(event_4)
-print("*"*50)
-print(event_5)
+for event in [event_1, event_2, event_3, event_4, event_5]:
+    print(event)
+    print("*"*50)
 
 #cancel a event
 event_3.cancel_event()
