@@ -1,5 +1,4 @@
 from datetime import date as Date, time
-from sqlite3 import Time
 class Event:
     def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
         """
@@ -56,7 +55,7 @@ class Event:
         """
         return self._Event_id
 
-    def update_scheduling_detials(self,new_date:Date,new_time:Time):
+    def update_scheduling_detials(self,new_date:Date,new_time:time):
         """
         This function will take in the new date and new time and check if the new date is in the future. If it is, it will update the date and start time of the event. 
         
