@@ -1,8 +1,71 @@
 
 from datetime import date as Date, time
 
+<<<<<<< HEAD
+=======
+class Venue:
+    def __init__(self,Venue_id:int,name:str,Capacity:int):
+        """
+        This function will take in the Venue_id, name and Capacity and store the values.
+        
+        
+        Args:
+            Venue_id (int): Venue's unique id.
+            name (str): Venue's name.
+            Capacity (int): Venue's capacity.
+            valid (bool): Store's the boolean value
+        
+        returns:
+            False - If the capacity is less than or equal to 0.
+            True - If the capacity is greater than 0, it will store all the values  in the object variables.
+        """
+        
+        self._Venue_id = Venue_id
+        self.name = name
+        
+        
+
+        if Capacity <= 0:
+            self.valid = False
+            self._Capacity = None
+        else:
+            self.valid = True
+            self._Capacity = Capacity
+            
+
+    def venue_id(self) -> int:
+        """
+        This function will return the Venue_id of the Venue object.
+        
+        Returns:
+            Venue_id (int): Venue's unique id.
+        """
+        return self._Venue_id
+
+    def capacity(self) -> int:
+        """
+        This function will return the capacity of the Venue object.
+        
+        Returns:
+            Capacity (int): Venue's capacity.
+        """
+        return self._Capacity
+    def __str__(self) -> str:
+        """
+        This function will return a string containing the Venue Information.
+        
+        Returns:
+            A string containing the Venue Information.
+        """
+        return ("Venue Information\n"
+                f"VenueID: {self._Venue_id}\n"
+                f"Name: {self.name}\n"
+                f"Capacity: {self._Capacity}")
+
+
+>>>>>>> 3e44c8d5da4368d79c04e708767f294495b787ab
 class Event:
-    def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:Time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
+    def __init__(self,Event_id:int,title:str,event_type:str,date:Date,start_time:time,capacity:int,venue:Venue,cancelled:bool,ticketprice:float):
         """
         This function will take in the Event_id, title, event_type, date, start_time, capacity, venue, cancelled and ticketprice and store the values.
         It will check if the date is in the future and if the event_type is valid and if the capacity is less than or equal to the venue capacity. If any of these checks fail, the corresponding attribute will be set to None.
@@ -144,74 +207,6 @@ class Event:
                 f"Capacity: {self._capacity}\n"
                 f"Cancelled: {answer}\n"
                 f"Ticket Price: {self.ticketprice}\n")
-
-    
-
-            
-
-
-
-
-
-
-class Venue:
-    def __init__(self,Venue_id:int,name:str,Capacity:int):
-        """
-        This function will take in the Venue_id, name and Capacity and store the values.
-        
-        
-        Args:
-            Venue_id (int): Venue's unique id.
-            name (str): Venue's name.
-            Capacity (int): Venue's capacity.
-            valid (bool): Store's the boolean value
-        
-        returns:
-            False - If the capacity is less than or equal to 0.
-            True - If the capacity is greater than 0, it will store all the values  in the object variables.
-        """
-        
-        self._Venue_id = Venue_id
-        self.name = name
-        
-        
-
-        if Capacity <= 0:
-            self.valid = False
-            self._Capacity = None
-        else:
-            self.valid = True
-            self._Capacity = Capacity
-            
-
-    def venue_id(self) -> int:
-        """
-        This function will return the Venue_id of the Venue object.
-        
-        Returns:
-            Venue_id (int): Venue's unique id.
-        """
-        return self._Venue_id
-
-    def capacity(self) -> int:
-        """
-        This function will return the capacity of the Venue object.
-        
-        Returns:
-            Capacity (int): Venue's capacity.
-        """
-        return self._Capacity
-    def __str__(self) -> str:
-        """
-        This function will return a string containing the Venue Information.
-        
-        Returns:
-            A string containing the Venue Information.
-        """
-        return ("Venue Information\n"
-                f"VenueID: {self._Venue_id}\n"
-                f"Name: {self.name}\n"
-                f"Capacity: {self._Capacity}")
 
 class Attendee:
     counter:int=0
