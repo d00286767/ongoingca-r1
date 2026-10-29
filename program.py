@@ -24,6 +24,11 @@ booking_3=Booking(person_3,event_3,Date(2026,8,16),False)
 booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
 booking_5=Booking(person_2,event_5,Date(2026,2,21),False)
 
+#Display cancelled Bookings
+for result in [booking_1,booking_2,booking_3,booking_4,booking_5]:
+    if result.cancelled==True:
+        print(result)
+
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
 if not check_email:
