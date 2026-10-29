@@ -226,6 +226,9 @@ class Attendee:
         Args:
            name (str): Attendee's name.
             email (str | None): Attendee's email.
+
+        Returns:
+            None
         """
         Attendee.counter+=1
 
@@ -278,7 +281,7 @@ class Attendee:
             #Counts the number of items in the list
             end:int =len(section)
             #IT checks if there is text after the last . and after the @ there is text
-            if section[end-1].isalnum() and len(after)>0:
+            if section[end-1].isalnum() and len(after[1])>0:
                 self.email=new_email
                 return True
             else:
@@ -320,6 +323,9 @@ class Booking:
                     event = Stores the Event Object
                     book_date = Stores the booking date
                     cancelled = Stores a boolean.
+
+                Returns:
+                    None
         """
         Booking.book_count+=1
         self.__book_id=Booking.book_count
