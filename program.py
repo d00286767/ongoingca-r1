@@ -24,17 +24,6 @@ booking_3=Booking(person_3,event_3,Date(2026,8,16),False)
 booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
 booking_5=Booking(person_2,event_5,Date(2026,2,21),False)
 
-#Cancel a booking
-print("Before")
-print(booking_3)
-booking_3.cancel_booking()
-print("After")
-print(booking_3)
-
-#Display cancelled Bookings
-for result in [booking_1,booking_2,booking_3,booking_4,booking_5]:
-    if result.cancelled==True:
-        print(result)
 
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
@@ -58,6 +47,15 @@ for event in [event_1, event_2, event_3, event_4, event_5]:
 #cancel a event
 event_3.cancel_event()
 
+#Cancel a booking
+print("Before changing booking")
+print(booking_3)
+booking_3.cancel_booking()
+print("After changing booking")
+print(booking_3)
+print(" ")
+print("-"*50)
+
 #display all the active events
 print("*"*50)
 print("Active Events:")
@@ -65,6 +63,12 @@ for event in [event_1, event_2, event_3, event_4, event_5]:
     if event.cancelled == False:
         print(event)
         print("*"*50)
+
+#Display cancelled Bookings
+for result in [booking_1,booking_2,booking_3,booking_4,booking_5]:
+    if result.cancelled==True:
+        print(result)
+print("-"*50)
 
 #Display bookings of specific attendee
 for specific in [booking_1,booking_2,booking_3,booking_4,booking_5]:
