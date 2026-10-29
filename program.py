@@ -24,13 +24,23 @@ booking_3=Booking(person_3,event_3,Date(2026,8,16),False)
 booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
 booking_5=Booking(person_2,event_5,Date(2026,2,21),False)
 
+#Display bookings
+print("Current Bookings")
+print("-"*50)
+for part in [booking_1,booking_2,booking_3,booking_4,booking_5]:
+    print(f"Name:{part.attendee.name}")
+    print(f"Title: {part.event.title}")
+    print(f"Event_Type: {part.event.event_type}")
+    print(" ")
 
+print("Changing the emails")
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
 if not check_email:
     print("Invalid Email")
 print(person_1)
 
+print("-"*50)
 #Checking domain name
 check_email_2 = person_2.update_email("d00288733@")
 if not check_email_2:
