@@ -216,7 +216,7 @@ class Attendee:
     valid:bool=False
 
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
-    def __init__(self,name: str, email:str | None=None):
+    def __init__(self,name: str, email:str | None=None) ->None:
         """
         This function will take in the name and email and store the values,
         it will be given a unique id and there is a valid email check
@@ -236,8 +236,10 @@ class Attendee:
             check_2:int=email.count(".")
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
                 portion:list[str]=email.split(".")
-                last=len(portion)
-                if portion[last-1].isalnum():
+                section:list[str]=email.split("@")
+
+                last:int=len(portion)
+                if portion[last-1].isalnum() and len(section[1])>0:
                     Attendee.valid=True
                 for x in email:
                     if x in Attendee.symbols:
@@ -271,10 +273,11 @@ class Attendee:
         if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2>=1 and new_email.islower():
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
+            after:list[str]=new_email.split("@")
             #Counts the number of items in the list
-            end=len(section)
-            #IT checks if there is text after the .
-            if section[end-1].isalnum():
+            end:int =len(section)
+            #IT checks if there is text after the last . and after the @ there is text
+            if section[end-1].isalnum() and len(after)>0:
                 self.email=new_email
                 return True
             else:
@@ -303,7 +306,7 @@ class Attendee:
         
 class Booking:
     book_count: int= 0
-    def __init__(self,attendee: Attendee, event: str, book_date:Date, cancelled: bool):
+    def __init__(self,attendee: Attendee | None, event: Event | None, book_date:Date, cancelled: bool) -> None:
         """
                 This function will take in the attendee, event,
                 booking date and cancelled.It will do checks on the booking date to check if the
@@ -330,11 +333,15 @@ class Booking:
 
         if attendee is not None:
             self.attendee=attendee
+        else:
+            self.attendee=None
 
         if event is not None:
             self.event=event
+        else:
+            self.event=None
 
-    def change_attendee(self,person: Attendee)-> bool:
+    def change_attendee(self,person: Attendee | None=None)-> bool:
         """
            This function will change the attendee on the booking
            and return a bool.
