@@ -210,7 +210,7 @@ class Attendee:
     valid:bool=False
 
     symbols:list[str]=["!",",","£","$","%","^","&","*","(",")","_","-","+","=","]","[","{","}",":",";","/","?","<",">","|","¬","``"]
-    def __init__(self,name: str, email:str | None=None) ->None:
+    def __init__(self,name: str, email:str | None) ->None:
         """
         This function will take in the name and email and store the values,
         it will be given a unique id and there is a valid email check
@@ -218,7 +218,7 @@ class Attendee:
 
         Args:
            name (str): Attendee's name.
-            email (str | None): Attendee's email.
+           email (str | None): Attendee's email.
 
         Returns:
             None
