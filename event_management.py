@@ -229,7 +229,7 @@ class Attendee:
         self.name=name
 
         if email is not None:
-            # Splits the email to check if there is text after the final .
+            # Counts how many @ and . are in email.
             check_1:int=email.count("@")
             check_2:int=email.count(".")
             #If the length is bigger or equal to 8 and less than or equal to 50 and there is only one @ and one or more . and the email is in lowercase, this will run.
