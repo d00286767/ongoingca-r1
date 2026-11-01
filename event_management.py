@@ -229,22 +229,28 @@ class Attendee:
         self.name=name
 
         if email is not None:
+            # Splits the email to check if there is text after the final .
             check_1:int=email.count("@")
             check_2:int=email.count(".")
+            #If the length is bigger or equal to 8 and less than or equal to 50 and there is only one @ and one or more . and the email is in lowercase, this will run.
             if len(email)>=8 and len(email)<=50 and check_1==1 and check_2>=1 and email.islower():
+                # Splits the email to check if there is text after the final .
                 portion:list[str]=email.split(".")
+                # Splits the email to check if there is text after the @.
                 section:list[str]=email.split("@")
-
                 last:int=len(portion)
                 if portion[last-1].isalnum() and len(section[1])>0:
                     Attendee.valid=True
                 for x in email:
+                    #Checks if there are any symbols in the email.
                     if x in Attendee.symbols:
                         print("Invalid email")
                         Attendee.valid=False
-        
+
+        #If valid is set to true, the email is stored.
         if Attendee.valid:
             self.email=email
+        #IF valid is set to false, the email is not stored and is set to none.
         else:
             self.email=None
     
@@ -262,6 +268,7 @@ class Attendee:
             True - If it passes the checks
             False - If it fails the checks
         """
+        #Checks if there are any invalid symbols in the email.
         for part in new_email:
             if part in Attendee.symbols:
                 return False
@@ -270,6 +277,7 @@ class Attendee:
         if len(new_email)>=8 and len(new_email)<=50 and look_1==1 and look_2>=1 and new_email.islower():
             #Splits the email to check if there is text after the final .
             section:list[str]=new_email.split(".")
+            #Splits the email to check if there is text after the @.
             after:list[str]=new_email.split("@")
             #Counts the number of items in the list
             end:int =len(section)
@@ -399,20 +407,6 @@ class Booking:
                 " ")
 
 
-    
-    
-# venue=Venue(1,"DkIT",100)
-# event=Event(1,"Conference","conference",Date(2027,8,26),time(10,0),100,venue,False,50.0)
-
-# event.update_scheduling_detials(Date(2026,5,27),time(11,0))
-# print(event)
-# print("*"*50)
-# event.change_venue(Venue(2,"DkIT",200))
-# print(event)
-# print("*"*50)
-# event.change_type("workshop")
-# print(event)
-
 
         
 
@@ -430,13 +424,3 @@ class Booking:
 
 
 
-
-# person=Attendee("Gian", "d00288733@student.dkit.ie")
-# print(person)
-# person.update_email("giangallego@gmail.com")
-# print(person)
-# mydate=Date(2026, 5, 26)
-# check=Booking(person,"conference",mydate,False)
-# print(check)
-# check.cancel_booking()
-# print(check)
