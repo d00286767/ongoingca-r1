@@ -25,7 +25,6 @@ booking_4=Booking(person_1,event_4,Date(2026,3,12),True)
 booking_5=Booking(person_2,event_5,Date(2026,2,21),False)
 
 #Display Venues
-
 print("Venues:")
 for place in [venue_1,venue_2,venue_3]:
     print(f"{place.name}")
@@ -41,6 +40,7 @@ for part in [booking_1,booking_2,booking_3,booking_4,booking_5]:
     print(f"Venue: {part.event.venue} ")
     print(" ")
 print("*"*50)
+
 print("Changing the emails")
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
