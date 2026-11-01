@@ -317,10 +317,10 @@ class Booking:
                 a unique id.
 
                 Args:
-                    attendee = Stores the Attendee Object
-                    event = Stores the Event Object
-                    book_date = Stores the booking date
-                    cancelled = Stores a boolean.
+                    attendee (Attendee | None) = Stores the Attendee Object
+                    event (Event | None) = Stores the Event Object
+                    book_date (Date) = Stores the booking date
+                    cancelled (bool) = Stores a boolean.
 
                 Returns:
                     None
@@ -355,7 +355,7 @@ class Booking:
            and return a bool.
 
            Args:
-               person = Stores the attendee object.
+               person (Attendee | None) = Stores the attendee object.
            Returns:
                True or false and if the object is not none, the value
                stored in the attendee variable will store the person
