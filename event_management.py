@@ -333,10 +333,13 @@ class Booking:
         self.__book_id=Booking.book_count
         self.cancelled=cancelled
 
+        # The current date is stored.
         current: Date=Date.today()
 
+        #If the current date is later than the booking date, the book date variable stores the booking date.
         if current>book_date:
             self.book_date=book_date
+        #If the current date is older than the booking date, the book date variable stores none.
         else:
             self.book_date=None
 
