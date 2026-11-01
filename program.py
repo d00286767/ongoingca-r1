@@ -30,14 +30,15 @@ print("Venues:")
 for place in [venue_1,venue_2,venue_3]:
     print(f"{place.name}")
 print(" ")
-
+print("-"*50)
 #Display bookings
 print("Current Bookings")
-print("-"*50)
+print(" ")
 for part in [booking_1,booking_2,booking_3,booking_4,booking_5]:
     print(f"Name:{part.attendee.name}")
     print(f"Title: {part.event.title}")
-    print(f"Event_Type: {part.event.event_type}")
+    print(f"Event Type: {part.event.event_type}")
+    print(f"Venue: {part.event.venue} ")
     print(" ")
 print("*"*50)
 print("Changing the emails")
@@ -70,7 +71,6 @@ booking_3.cancel_booking()
 print("After changing booking")
 print(booking_3)
 print(" ")
-print("-"*50)
 
 #display all the active events
 print("*"*50)
