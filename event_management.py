@@ -402,7 +402,7 @@ class Booking:
                 " "
                 f"Booking Date: {self.book_date}\n"
                 "Event Details:\n"
-                f"Event: {self.event}\n"
+                f"Event: {self.event}"
                 f"Booking Cancelled: {answer}\n"
                 " ")
 
