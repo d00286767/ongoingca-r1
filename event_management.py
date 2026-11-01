@@ -398,11 +398,10 @@ class Booking:
                 "Attendee details:\n"
                 " "
                 f"{self.attendee}\n"
-                " "
                 f"Booking Date: {self.book_date}\n"
+                f"Booking Cancelled: {answer}\n"
                 "Event Details:\n"
                 f"Event: {self.event}"
-                f"Booking Cancelled: {answer}\n"
                 " ")
 
 
