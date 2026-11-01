@@ -39,7 +39,7 @@ for part in [booking_1,booking_2,booking_3,booking_4,booking_5]:
     print(f"Title: {part.event.title}")
     print(f"Event_Type: {part.event.event_type}")
     print(" ")
-
+print("*"*50)
 print("Changing the emails")
 #Changing the email without an @.
 check_email = person_1.update_email("d00288733student.dkit.ie")
@@ -47,7 +47,6 @@ if not check_email:
     print("Invalid Email, there is no @")
 print(person_1)
 
-print("-"*50)
 #Checking domain name
 check_email_2 = person_2.update_email("d00288733@")
 if not check_email_2:
@@ -61,7 +60,7 @@ for event in [event_1, event_2, event_3, event_4, event_5]:
     print(event)
     print("*"*50)
 
-#cancel a event
+#cancel an event
 event_3.cancel_event()
 
 #Cancel a booking
@@ -87,7 +86,7 @@ for result in [booking_1,booking_2,booking_3,booking_4,booking_5]:
         print(result)
 print("-"*50)
 
-#Display bookings of specific attendee
+#Display bookings of specific attendee(person_1)
 for specific in [booking_1,booking_2,booking_3,booking_4,booking_5]:
     if specific.attendee.name==person_1.name:
         print(specific)
