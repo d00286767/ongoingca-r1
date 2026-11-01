@@ -295,10 +295,6 @@ class Attendee:
         This function will return a string that contains information
         of the Attendee.
 
-        Args:
-            self.name = Name of the Attendee.
-            self.email= Email of the Attendee.
-
         Returns:
             A string that contains the Attendee's name and Attendee's email.
         """
