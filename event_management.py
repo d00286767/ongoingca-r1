@@ -353,7 +353,7 @@ class Booking:
         else:
             self.event=None
 
-    def change_attendee(self,person: Attendee | None=None)-> bool:
+    def change_attendee(self,person: Attendee | None)-> bool:
         """
            This function will change the attendee on the booking
            and return a bool.
